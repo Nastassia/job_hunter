@@ -6,3 +6,7 @@
 h5 {
   margin-bottom: 4px;
 }
+
+#contacts h2 {
+  text-decoration: underline;
+}
