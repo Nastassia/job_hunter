@@ -7,6 +7,12 @@ h5 {
   margin-bottom: 4px;
 }
 
-#contacts h2 {
+ h2 {
   text-decoration: underline;
+}
+
+#categories p {
+  padding: 20px;
+  background-color: #DDD;
+  border: 1px solid;
 }
