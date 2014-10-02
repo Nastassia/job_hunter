@@ -1,8 +1,30 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="stylesheets/styles.css" />
+	<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+	<script src="/javascripts/scripts.js"></script>
 </head>
 <body>
+	<main>
+		<div id="wrapper">
+			<h2>Job Hunter</h2>
+				<h5>Enter a contact</h5>
+					<div id="form">
+						Name:<input type="text" name="name" /><br />
+						Age: <input type="number" name="age" /><br />
+						Address: <<textarea name="address" rows="8" cols="40"></textarea><br /><
+						Phone Number: <input type="text" name="number" /><br />
+						Picture: <input type="text" name="picture" /><br />
+						Category: <input type="text" name="category" /><br />
+						<button>Submit</button>
+					</div>
 
+					<div id="contacts">
+					</div>
+		</div>
+	</main>
 </body>
 </html>
