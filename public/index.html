@@ -6,7 +6,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
-	<script src="/javascripts/scripts.js"></script>
+	<script src="/javascripts/scripts3.js"></script>
 </head>
 <body>
 	<main>
@@ -20,16 +20,20 @@
 						Phone Number: <input type="text" name="number" /><br />
 						Picture: <input type="text" name="picture" /><br />
 						Category: <input type="text" name="category" /><br />
-						<button>Submit</button>
+						<button id="submit">Submit</button>
 					</div>
-					<div id="contacts">
+					<div id="contacts" class="col-md-6">
 						<h2>Current Contacts</h2>
+						<ul>
+						</ul>
 						<!-- /*<script id="template" type="text/template">
 							<h3><%= models.get('name') %> -- <%= models.get('category_id') %></h3>
 						</script>*/ -->
 					</div>
-					<div id="categories">
+					<div id="categories" class="col-md-6">
 						<h2>Categories</h2>
+						<ul>
+						</ul>
 
 					</div>
 		</div>

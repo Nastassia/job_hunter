@@ -16,3 +16,24 @@ h5 {
   background-color: #DDD;
   border: 1px solid;
 }
+
+/* Styles for jQuery Project */
+body {
+  background-color: #F2EFDF;
+}
+.categoryItem {
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #A1D78D;
+  border: 1px solid;
+  list-style-type: none;
+}
+
+.contactItem {
+  list-style-type: none;
+  background-color:#D7B48D;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid;
+  margin-bottom: 10px;
+}
