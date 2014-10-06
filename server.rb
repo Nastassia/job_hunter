@@ -3,6 +3,7 @@ require_relative './db/connection'
 require_relative './lib/category'
 require_relative './lib/contact'
 require 'active_support'
+require 'pry'
 
 after do
   ActiveRecord::Base.connection.close
@@ -49,6 +50,7 @@ get("/contacts/:id") do
 end
 
 post("/contacts") do
+  binding.pry
   contact = Contact.create(contact_params(params))
   contact.to_json
 end
