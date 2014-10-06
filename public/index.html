@@ -11,26 +11,30 @@
 <body>
 	<main>
 		<div id="wrapper">
+			<header>
 			<h2>Job Hunter</h2>
+			</header>
 				<h5>Enter a contact</h5>
-					<div id="form">
-						Name:<input type="text" name="name" required /><br />
-						Age: <input type="number" name="age" required /><br />
+					<div id="form" class="col-md-3">
+						<aside>
+						Name:<br /><input type="text" name="name" required /><br />
+						Age: <br /><input type="number" name="age" required /><br />
 						Address:<br /> <textarea name="address" rows="3" cols="20"></textarea><br />
-						Phone Number: <input type="text" name="number" /><br />
-						Picture: <input type="text" name="picture" /><br />
-						Category: <input type="text" name="category" /><br />
+						Phone Number: <br /> <input type="text" name="number" /><br />
+						Picture: <br /> <input type="text" name="picture" /><br />
+						Category:<br /><select></select><br />
 						<button id="submit">Submit</button>
+					</aside>
 					</div>
-					<div id="contacts" class="col-md-6">
-						<h2>Current Contacts</h2>
+					<div id="contacts" class="col-md-4 col-md-offset-1">
+						<h2>Contacts</h2>
 						<ul>
 						</ul>
 						<!-- /*<script id="template" type="text/template">
 							<h3><%= models.get('name') %> -- <%= models.get('category_id') %></h3>
 						</script>*/ -->
 					</div>
-					<div id="categories" class="col-md-6">
+					<div id="categories" class="col-md-4">
 						<h2>Categories</h2>
 						<ul>
 						</ul>
