@@ -1,6 +1,9 @@
 #wrapper {
   margin: 0 auto;
   width: 70%;
+  min-height: 100%;
+  padding: 20px;
+  background-color: #ABC8A4;
 }
 
 h5 {
@@ -19,22 +22,31 @@ h5 {
 
 /* Styles for jQuery Project */
 body {
-  background-color: #F2EFDF;
+  background-color: #ABC8A4;
+}
+
+button {
+  border-radius: 5px;
 }
 .categoryItem {
   padding: 20px;
   margin-bottom: 10px;
-  background-color: #A1D78D;
+  background-color: #375D3B;
   border: 1px solid;
+  border-radius: 25px;
   list-style-type: none;
 }
 
+li {
+  margin-bottom: 5px;
+}
 .contactItem {
   list-style-type: none;
-  background-color:#D7B48D;
+  background-color:#C4D7A4;
   padding: 20px;
   font-size: 16px;
   border: 1px solid;
+  border-radius: 25px;
   /*margin-bottom: 10px;*/
 }
 

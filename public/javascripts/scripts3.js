@@ -9,11 +9,7 @@ $(function(){
     var contactsArea = $('#contacts');
     for(var i=0;i<data.length;i++){
       contactsArea.append('<div class="divContactItem"><li class="contactItem" draggable="true">' + data[i].name +'<br />'+'</li>'+'<button id="del">X</button></div>');
-      // create delete event listener
-      // $('#contacts').on('click', function(e){
-      //   console.log(e);
-        // console.log(this);
-      // })
+
     }
 
     $('button#del').click(function(e){
@@ -51,9 +47,10 @@ $(function(){
     var contactNumber = $('input[name="number"]').val();
     var contactPicture = $('input[name="picture"]').val();
     var contactCategory = $('input[name="category"]').val();
+    var newContact = contactName
     $.post('/contacts',
-      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){var data = getContacts(); contactsArea.append('<li>' + data[data.length -1] + '</li>');}
-    )
+      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' + contactName +'<br />'+'</li>'+'<button id="del">X</button></div>'); }
+    ); $('input').val('');
   });
 
 });

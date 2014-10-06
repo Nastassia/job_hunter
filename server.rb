@@ -50,7 +50,6 @@ get("/contacts/:id") do
 end
 
 post("/contacts") do
-  binding.pry
   contact = Contact.create(contact_params(params))
   contact.to_json
 end
