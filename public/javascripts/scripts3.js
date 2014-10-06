@@ -22,7 +22,7 @@ $(function(){
         contactName = contactName.trim();
         $.get('/contacts', function(data){
           for(var j=0;j<data.length;j++){
-            if (contactName == data[j].name){
+            if (contactName == data[j].name || data[j].name == null){
               $.ajax({
                 url: '/contacts/' + data[j].id,
                 type: 'post',
