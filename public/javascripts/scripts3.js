@@ -8,12 +8,12 @@ $(function(){
     // render the contacts from server
     var contactsArea = $('#contacts');
     for(var i=0;i<data.length;i++){
-      contactsArea.append('<div class="divContactItem"><li class="contactItem" draggable="true">' + data[i].name +'<br />'+'</li>'+'<button id="edit" data-toggle="modal" data-target="#myModal">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
-    }
-    $('button#del').click(function(e){
-      console.log(e);
-      $(this).parent().fadeOut();
+      contactsArea.append('<div class="divContactItem"><li class="contactItem" draggable="true">' + '<h3>'+ data[i].name + '</h3>'+'<br />'+ '<span class="contact_info">'+ '<p>' + data[i].age + '<br />' + data[i].address + '</p>' +
 
+      '</li>'+'<button id="edit" data-toggle="modal" data-target="#myModal">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
+    }
+    $('button#del').click(function(){
+      $(this).parent().fadeOut();
         var contactName = $(this).parent().find('li')[0].innerText;
         contactName = contactName.trim();
         $.get('/contacts', function(data){
@@ -28,7 +28,8 @@ $(function(){
               }
             }});
       })})
-    }
+    };
+
 
 
       $('button#edit').click(function(){
@@ -47,7 +48,7 @@ $(function(){
 
               }
             }
-         })});
+         })})
 
 
 var dropdown = $('select');
@@ -57,6 +58,7 @@ var dropdown = $('select');
       categoryArea.append('<li class="categoryItem">' + data[i].name + '</li>');
       dropdown.append('<option value="'+data[i].id+'">'+data[i].name+'</option>');
     }
+    if('draggable' in $('.categoryItem')){ alert(categoryItem);}
   });
 
 
@@ -70,7 +72,9 @@ var dropdown = $('select');
 
     var newContact = contactName
     $.post('/contacts',
-      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' + contactName +'<br />'+'</li>'+'<button id="edit">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
+      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' +'<h3>'+ contactName + '</h3>'+'<br />'+ '<span class="contact_info">'+ '<p>' + contactAge + '<br />' + contactAddress + '</p>' +
+
+      '</li>'+'<button id="edit" data-toggle="modal" data-target="#myModal">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
       $('input').val('');})
     });
 

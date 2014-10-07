@@ -33,11 +33,13 @@ button {
 .categoryItem {
   padding: 20px;
   margin-bottom: 10px;
-  background-color: #375D3B;
-  color: #C4D7A4;
-  border: 1px solid #C4D7A4;
-  border-radius: 25px;
+  background-color: #D62222;
+  color: #000;
+  border: 1px solid;
+  /*border-radius: 25px;*/
   list-style-type: none;
+  box-shadow: 1px 1px 1px #888888;
+
 }
 
 li {
@@ -45,13 +47,14 @@ li {
 }
 .contactItem {
   list-style-type: none;
-  background-color:#C4D7A4;
-  color: #375D3B;
+  background-color:#0EDBE6;
+  color: #000;
   padding: 20px;
   font-size: 16px;
   border: 1px solid #375D3B;
-  border-radius: 15px;
-  /*margin-bottom: 10px;*/
+  /*border-radius: 15px;*/
+  box-shadow: 1px 1px 1px #888888;
+
 }
 
 .divContactItem {
