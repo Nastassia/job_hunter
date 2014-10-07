@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+Bundler.require(:default)
 require 'sinatra'
 require_relative './db/connection'
 require_relative './lib/category'
