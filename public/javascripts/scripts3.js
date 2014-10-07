@@ -68,13 +68,6 @@ var dropdown = $('select');
     var contactPicture = $('input[name="picture"]').val();
     var contactCategory = $('input[name="category"]').val();
 
-    // var inputs = $('input');
-    // for(var i=0;i<inputs.length;i++){
-    //   if (inputs[i] == ""){
-    //     alert('')
-    //   }
-    // }
-    //
     var newContact = contactName
     $.post('/contacts',
       {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' + contactName +'<br />'+'</li>'+'<button id="edit">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
