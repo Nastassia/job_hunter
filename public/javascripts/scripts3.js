@@ -8,12 +8,12 @@ $(function(){
     // render the contacts from server
     var contactsArea = $('#contacts');
     for(var i=0;i<data.length;i++){
-      contactsArea.append('<div class="divContactItem"><li class="contactItem" draggable="true">' + data[i].name +'<br />'+'</li>'+'<button id="edit">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
-
+      contactsArea.append('<div class="divContactItem"><li class="contactItem" draggable="true">' + data[i].name +'<br />'+'</li>'+'<button id="edit" data-toggle="modal" data-target="#myModal">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
     }
-
     $('button#del').click(function(e){
+      console.log(e);
       $(this).parent().fadeOut();
+
         var contactName = $(this).parent().find('li')[0].innerText;
         contactName = contactName.trim();
         $.get('/contacts', function(data){
@@ -24,14 +24,31 @@ $(function(){
                 type: 'post',
                 dataType: 'json',
                 data: {'_method':'delete'}
-                })
+               });
               }
-             }
-            })
-        // $.post('/contacts', contactName.id.destroy)
-      });
-  });
-}
+            }});
+      })})
+    }
+
+
+      $('button#edit').click(function(){
+
+        var contactName = $(this).parent()[0].innerText.split('\n')[0];
+        $.get('/contacts', function(data){
+          for(var k=0;k<data.length;k++){
+            if (contactName == data[k].name){
+              $('.modal-body').html(
+                "<input type='text name='name'' value="+data[k].name+">"+"<br />"+
+                "<input type='number' name='age'' value="+data[k].age+">"+"<br />"+
+                "<textarea>"+data[k].address+"</textarea><br />"+
+                "<input type='text' name='number' value="+data[k].phone_number+">"+"<br />"+
+                "<input type='text' name='picture' value="+data[k].picture+">"+"<br />");
+
+
+              }
+            }
+         })});
+
 
 var dropdown = $('select');
   $.get('/categories', function(data){
@@ -46,7 +63,7 @@ var dropdown = $('select');
   submitbtn.on('click', function(){
     var contactName = $('input[name="name"]').val();
     var contactAge = $('input[name="age"]').val();
-    var contactAddress = $('input[name="address"]').val();
+    var contactAddress = $('textarea').val();
     var contactNumber = $('input[name="number"]').val();
     var contactPicture = $('input[name="picture"]').val();
     var contactCategory = $('input[name="category"]').val();
@@ -60,8 +77,10 @@ var dropdown = $('select');
     //
     var newContact = contactName
     $.post('/contacts',
-      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' + contactName +'<br />'+'</li>'+'<button id="edit">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>'); }
-    ); $('input').val('');
-  });
+      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' + contactName +'<br />'+'</li>'+'<button id="edit">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
+      $('input').val('');})
+    });
+
+
 
 });
