@@ -72,9 +72,8 @@ var dropdown = $('select');
 
     var newContact = contactName
     $.post('/contacts',
-      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' +'<h3>'+ contactName + '</h3>'+'<br />'+ '<span class="contact_info">'+ '<p>' + contactAge + '<br />' + contactAddress + '</p>' +
-
-      '</li>'+'<button id="edit" data-toggle="modal" data-target="#myModal">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>');
+      {name: contactName, age: contactAge, address: contactAddress, phone_number: contactNumber, picture: contactPicture, category_id: contactCategory}, function(){ $('div#contacts').append('<div class="divContactItem"><li class="contactItem" draggable="true">' +'<h3>'+ contactName + '</h3>'+'<br />'+ '<span class="contact_info">'+ '<p>' + contactAge + '<br />' + contactAddress  + ' />' + '</p>' +
+'</li>'+'<button id="edit" data-toggle="modal" data-target="#myModal">Edit</button>'+" "+'<button id="del"><img src="/trashcan.gif" /></button></div>' );
       $('input').val('');})
     });
 

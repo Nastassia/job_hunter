@@ -11,6 +11,6 @@ networking = Category.create(name: "Networking")
 hr = Category.create(name: "HR")
 
 
-Contact.create(name: "Sean", category_id: alumni.id)
-Contact.create(name: "Jeff", category_id: alumni.id)
-Contact.create(name: "Neel", category_id: alumni.id)
+Contact.create(name: "Balthazar Stevik", age: 27, address: "1025 Windermere Lane", phone_number: "555-432-9484", category_id: networking.id)
+Contact.create(name: "Gabrielle Newton", age: 33, address: "45 Telerman Drive", phone_number: "555-314-1618", category_id: alumni.id)
+Contact.create(name: "Ebenezer Eaton", age: 25, address: "903 Chestnut Road", phone_number: "555-001-3141", category_id: hr.id)
